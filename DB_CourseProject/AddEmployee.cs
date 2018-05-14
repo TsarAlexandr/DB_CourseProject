@@ -29,7 +29,7 @@ namespace DB_CourseProject
             var adapter = f1.getAdapter();
             var dataset = f1.getDataSet();
 
-            var EmployeeTable = dataset.Employees;
+            var EmployeeTable = dataset.Employees1;
             DataRow row = EmployeeTable.NewRow();
             row["surname"] = textBox1.Text;
             row["name"] = textBox2.Text;
@@ -65,7 +65,7 @@ namespace DB_CourseProject
         {
             var adapter = f1.getAdapter();
             var dataset = f1.getDataSet();
-            var EmployeeTable = dataset.Employees;
+            var EmployeeTable = dataset.Employees1;
             var row = EmployeeTable.First(x => x.empId == Int32.Parse(current["empId"].ToString()));
             row["surname"] = textBox1.Text;
             row["name"] = textBox2.Text;
