@@ -12,18 +12,20 @@ namespace DB_CourseProject
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        DataRowView current;
+        public Form1(DataRowView _current)
         {
             InitializeComponent();
+            current = _current;
         }
 
-        private void employeesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.employees1BindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.computerFirmDataSet);
+        //private void employeesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        //{
+        //    this.Validate();
+        //    this.employees1BindingSource.EndEdit();
+        //    this.tableAdapterManager.UpdateAll(this.computerFirmDataSet);
 
-        }
+        //}
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -33,22 +35,22 @@ namespace DB_CourseProject
             this.salesTableAdapter.Fill(this.computerFirmDataSet.Sales);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "computerFirmDataSet.Employees1". При необходимости она может быть перемещена или удалена.
             this.employees1TableAdapter.Fill(this.computerFirmDataSet.Employees1);
-           
+            while (true)
+            {
+                var cur = (DataRowView)this.employees1BindingSource.Current;
+                if (cur["empId"].ToString() == current["empId"].ToString())
+                    break;
+                this.employees1BindingSource.MoveNext();
+            }
 
         }
-        
-        public BindingSource  getBSource()
-        {
-            return this.employees1BindingSource;
-        }
+              
+       
         public ComputerFirmDataSetTableAdapters.PositionsTableAdapter getPosAdapter()
         {
             return this.positionsTableAdapter;
         }
-        public ComputerFirmDataSetTableAdapters.Employees1TableAdapter getAdapter()
-        {
-            return this.employees1TableAdapter;
-        }
+        
 
         public ComputerFirmDataSet getDataSet()
         {
@@ -81,6 +83,7 @@ namespace DB_CourseProject
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+           
             employees1BindingSource.RemoveCurrent();
 
         }
@@ -96,14 +99,11 @@ namespace DB_CourseProject
             this.Validate();
             this.employees1BindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.computerFirmDataSet);
-        }
-
-        private void employees1BindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.employees1BindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.computerFirmDataSet);
-
+            var emp = this.Owner as Employees;
+            var adapter = emp.getAdapter();
+            var dataset = emp.getDataSet();
+            adapter.Update(dataset.Employees1);
+            adapter.Fill(dataset.Employees1);
         }
 
         private void buttonAddPosition_Click(object sender, EventArgs e)

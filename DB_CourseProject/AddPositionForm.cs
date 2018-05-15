@@ -32,16 +32,35 @@ namespace DB_CourseProject
 
         }
 
+        private void fillParent(Form f)
+        {
+            var parent = f.Owner as Employees;
+            var adapter2 = parent.getPosAdapter();
+            adapter2.Update(parent.getDataSet());
+            adapter2.Fill(parent.getDataSet().Positions);
+        }
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            var f1 = this.Owner as Form1;
-            var adapter = f1.getPosAdapter();
-
             this.Validate();
             this.positionsBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.computerFirmDataSet);
-            adapter.Update(f1.getDataSet());
-            adapter.Fill(f1.getDataSet().Positions);
+            var f1 = this.Owner as Form1;
+            var ae = this.Owner as AddEmployee;
+            if (f1 != null)
+            {
+                var adapter = f1.getPosAdapter();
+                adapter.Update(f1.getDataSet());
+                adapter.Fill(f1.getDataSet().Positions);
+                fillParent(f1);
+            }
+            if (ae != null)
+            {
+                var adapter = ae.getPosAdapter();
+                adapter.Update(ae.getDataSet());
+                adapter.Fill(ae.getDataSet().Positions);
+                fillParent(ae);
+                
+            }
             this.Close();
         }
     }
