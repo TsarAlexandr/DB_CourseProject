@@ -13,3 +13,4 @@ C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProj
 C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProject\obj\Debug\DB_CourseProject.Employees.resources
 C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProject\obj\Debug\DB_CourseProject.Sales.resources
 C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProject\obj\Debug\DB_CourseProject.StartForm.resources
+C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProject\obj\Debug\DB_CourseProject.AddItemForm.resources
