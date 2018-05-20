@@ -16,5 +16,20 @@ namespace DB_CourseProject
         {
             InitializeComponent();
         }
+
+        private void salesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.salesBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.computerFirmDataSet);
+
+        }
+
+        private void Sales_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "computerFirmDataSet.Sales". При необходимости она может быть перемещена или удалена.
+            this.salesTableAdapter.Fill(this.computerFirmDataSet.Sales);
+
+        }
     }
 }
