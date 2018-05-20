@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonAddNew = new System.Windows.Forms.Button();
             this.buttonRemoveCurrent = new System.Windows.Forms.Button();
             this.buttonGetOrder = new System.Windows.Forms.Button();
+            this.GoodsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,28 +43,13 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name,
+            this.GoodsName,
             this.Quantity,
             this.Price});
             this.dataGridView1.Location = new System.Drawing.Point(27, 62);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(346, 165);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "Наименование";
-            this.Name.Name = "Name";
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Кол-во";
-            this.Quantity.Name = "Quantity";
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Цена";
-            this.Price.Name = "Price";
             // 
             // label1
             // 
@@ -105,6 +90,21 @@
             this.buttonGetOrder.Text = "Оформить заказ";
             this.buttonGetOrder.UseVisualStyleBackColor = true;
             // 
+            // GoodsName
+            // 
+            this.GoodsName.HeaderText = "Наименование";
+            this.GoodsName.Name = "GoodsName";
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Кол-во";
+            this.Quantity.Name = "Quantity";
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Цена";
+            this.Price.Name = "Price";
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,12 +126,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonAddNew;
         private System.Windows.Forms.Button buttonRemoveCurrent;
         private System.Windows.Forms.Button buttonGetOrder;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GoodsName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
     }
 }
