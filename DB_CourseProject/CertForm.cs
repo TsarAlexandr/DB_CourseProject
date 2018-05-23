@@ -23,13 +23,13 @@ namespace DB_CourseProject
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "computerFirmDataSet.Employees1". При необходимости она может быть перемещена или удалена.
             //this.employees1TableAdapter.Fill(this.computerFirmDataSet.Employees1);
-            employees1BindingSource.DataSource = computerFirmDataSet.Employees1.ToList();
             emp = this.Owner as Employees;
-            DataRowView current = (DataRowView)emp.getBSource().Current;
-            string FIO = current["surname"].ToString() + " " + current["name"].ToString() + " " + current["patronymic"].ToString();
-            ReportParameter pFIO = new ReportParameter("pFIO", FIO);
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { pFIO });
-            
+            employees1BindingSource.DataSource = emp.getBSource().Current;
+
+            //string FIO = current["surname"].ToString() + " " + current["name"].ToString() + " " + current["patronymic"].ToString();
+            //ReportParameter pFIO = new ReportParameter("pFIO", FIO);
+            //reportViewer1.LocalReport.SetParameters(new ReportParameter[] { pFIO });
+
             //var reportData = new ReportDataSource("DataSet1", employees1BindingSource);
             //reportViewer1.LocalReport.DataSources.Add(reportData); 
             //this.reportViewer1.RefreshReport();

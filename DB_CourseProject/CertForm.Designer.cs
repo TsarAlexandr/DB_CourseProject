@@ -29,12 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.computerFirmDataSet = new DB_CourseProject.ComputerFirmDataSet();
             this.employees1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employees1TableAdapter = new DB_CourseProject.ComputerFirmDataSetTableAdapters.Employees1TableAdapter();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.SalesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SalesTableAdapter = new DB_CourseProject.ComputerFirmDataSetTableAdapters.SalesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.computerFirmDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employees1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // computerFirmDataSet
@@ -53,24 +57,37 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "DB_CourseProject.Report2.rdlc";
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.employees1BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "DB_CourseProject.Certificate.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(26, 26);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
+            this.reportViewer1.Size = new System.Drawing.Size(705, 246);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // SalesBindingSource
+            // 
+            this.SalesBindingSource.DataMember = "Sales";
+            this.SalesBindingSource.DataSource = this.computerFirmDataSet;
+            // 
+            // SalesTableAdapter
+            // 
+            this.SalesTableAdapter.ClearBeforeFill = true;
             // 
             // CertForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 404);
+            this.ClientSize = new System.Drawing.Size(770, 404);
             this.Controls.Add(this.reportViewer1);
             this.Name = "CertForm";
             this.Text = "CertForm";
             this.Load += new System.EventHandler(this.CertForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.computerFirmDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employees1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -80,5 +97,7 @@
         private System.Windows.Forms.BindingSource employees1BindingSource;
         private ComputerFirmDataSetTableAdapters.Employees1TableAdapter employees1TableAdapter;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource SalesBindingSource;
+        private ComputerFirmDataSetTableAdapters.SalesTableAdapter SalesTableAdapter;
     }
 }

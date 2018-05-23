@@ -158,6 +158,7 @@
     <EmbeddedResource Include="CertForm.resx">
       <DependentUpon>CertForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Certificate.rdlc" />
     <EmbeddedResource Include="Employees.resx">
       <DependentUpon>Employees.cs</DependentUpon>
     </EmbeddedResource>
