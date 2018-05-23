@@ -76,5 +76,12 @@ namespace DB_CourseProject
             this.employees1BindingSource.Filter = "posId=" + comboBox1.SelectedValue;
             this.employees1TableAdapter.Fill(this.computerFirmDataSet.Employees1);
         }
+
+        private void buttonCertificate_Click(object sender, EventArgs e)
+        {
+            CertForm cert = new CertForm();
+            cert.Owner = this;
+            cert.ShowDialog();
+        }
     }
 }

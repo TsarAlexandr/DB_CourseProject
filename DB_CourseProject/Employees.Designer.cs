@@ -33,16 +33,17 @@
             this.employees1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employees1TableAdapter = new DB_CourseProject.ComputerFirmDataSetTableAdapters.Employees1TableAdapter();
             this.tableAdapterManager = new DB_CourseProject.ComputerFirmDataSetTableAdapters.TableAdapterManager();
+            this.positionsTableAdapter = new DB_CourseProject.ComputerFirmDataSetTableAdapters.PositionsTableAdapter();
             this.employees1DataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.positionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.positionsTableAdapter = new DB_CourseProject.ComputerFirmDataSetTableAdapters.PositionsTableAdapter();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonCertificate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.computerFirmDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employees1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employees1DataGridView)).BeginInit();
@@ -74,6 +75,10 @@
             this.tableAdapterManager.SalesTableAdapter = null;
             this.tableAdapterManager.TypesTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = DB_CourseProject.ComputerFirmDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // positionsTableAdapter
+            // 
+            this.positionsTableAdapter.ClearBeforeFill = true;
             // 
             // employees1DataGridView
             // 
@@ -124,10 +129,6 @@
             this.positionsBindingSource.DataMember = "Positions";
             this.positionsBindingSource.DataSource = this.computerFirmDataSet;
             // 
-            // positionsTableAdapter
-            // 
-            this.positionsTableAdapter.ClearBeforeFill = true;
-            // 
             // buttonAdd
             // 
             this.buttonAdd.Location = new System.Drawing.Point(444, 78);
@@ -158,11 +159,22 @@
             this.buttonEdit.UseVisualStyleBackColor = true;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
+            // buttonCertificate
+            // 
+            this.buttonCertificate.Location = new System.Drawing.Point(447, 276);
+            this.buttonCertificate.Name = "buttonCertificate";
+            this.buttonCertificate.Size = new System.Drawing.Size(64, 41);
+            this.buttonCertificate.TabIndex = 6;
+            this.buttonCertificate.Text = "Справка";
+            this.buttonCertificate.UseVisualStyleBackColor = true;
+            this.buttonCertificate.Click += new System.EventHandler(this.buttonCertificate_Click);
+            // 
             // Employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 411);
+            this.Controls.Add(this.buttonCertificate);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonAdd);
@@ -195,5 +207,6 @@
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Button buttonCertificate;
     }
 }

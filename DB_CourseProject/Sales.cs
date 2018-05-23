@@ -31,5 +31,12 @@ namespace DB_CourseProject
             this.salesTableAdapter.Fill(this.computerFirmDataSet.Sales);
 
         }
+
+        private void buttonReport_Click(object sender, EventArgs e)
+        {
+            Report rep = new Report();
+            rep.Owner = this;
+            rep.ShowDialog();
+        }
     }
 }
