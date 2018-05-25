@@ -12,9 +12,11 @@ namespace DB_CourseProject
 {
     public partial class MySales : Form
     {
-        public MySales()
+        int empId;
+        public MySales(int empId)
         {
             InitializeComponent();
+            this.empId = empId;
         }
 
         private void salesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -29,6 +31,8 @@ namespace DB_CourseProject
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "computerFirmDataSet.Sales". При необходимости она может быть перемещена или удалена.
             this.salesTableAdapter.Fill(this.computerFirmDataSet.Sales);
+            var mySales = computerFirmDataSet.Sales.Where(x => x.empId == empId);
+            salesBindingSource.DataSource = mySales.ToList();
 
         }
     }

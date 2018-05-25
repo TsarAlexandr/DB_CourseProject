@@ -40,6 +40,7 @@
             this.buttonNewOrder.TabIndex = 0;
             this.buttonNewOrder.Text = "Оформить новый заказ";
             this.buttonNewOrder.UseVisualStyleBackColor = true;
+            this.buttonNewOrder.Click += new System.EventHandler(this.buttonNewOrder_Click);
             // 
             // buttonMySales
             // 
@@ -49,6 +50,7 @@
             this.buttonMySales.TabIndex = 1;
             this.buttonMySales.Text = "Мои заказы";
             this.buttonMySales.UseVisualStyleBackColor = true;
+            this.buttonMySales.Click += new System.EventHandler(this.buttonMySales_Click);
             // 
             // SalesManagerStartForm
             // 

@@ -83,6 +83,7 @@ namespace DB_CourseProject
                     addOrder(orderId, Price);
             }
             MessageBox.Show("Order Passed!");
+            this.Close();
             
 
         }
@@ -125,10 +126,5 @@ namespace DB_CourseProject
             labelName.Text = emp["surname"].ToString() + " " + emp["name"].ToString();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Sales s = new Sales();
-            s.ShowDialog();
-        }
-    }
+     }
 }
