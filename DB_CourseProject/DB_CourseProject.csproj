@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDevice.Designer.cs">
+      <DependentUpon>AddDevice.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,12 @@
     <Compile Include="AddPositionForm.Designer.cs">
       <DependentUpon>AddPositionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddType.Designer.cs">
+      <DependentUpon>AddType.cs</DependentUpon>
+    </Compile>
     <Compile Include="CertForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +106,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ComputerFirmDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DirectorStartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirectorStartForm.Designer.cs">
+      <DependentUpon>DirectorStartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Employees.cs">
       <SubType>Form</SubType>
@@ -112,6 +130,12 @@
     </Compile>
     <Compile Include="MySales.Designer.cs">
       <DependentUpon>MySales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewItem.Designer.cs">
+      <DependentUpon>NewItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
       <SubType>Form</SubType>
@@ -146,6 +170,9 @@
     <Compile Include="StartForm.Designer.cs">
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddDevice.resx">
+      <DependentUpon>AddDevice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,10 +182,16 @@
     <EmbeddedResource Include="AddPositionForm.resx">
       <DependentUpon>AddPositionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddType.resx">
+      <DependentUpon>AddType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CertForm.resx">
       <DependentUpon>CertForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Certificate.rdlc" />
+    <EmbeddedResource Include="DirectorStartForm.resx">
+      <DependentUpon>DirectorStartForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employees.resx">
       <DependentUpon>Employees.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MySales.resx">
       <DependentUpon>MySales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewItem.resx">
+      <DependentUpon>NewItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order.resx">
       <DependentUpon>Order.cs</DependentUpon>

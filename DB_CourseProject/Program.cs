@@ -16,7 +16,7 @@ namespace DB_CourseProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Employees());
+            Application.Run(new Order(1005));
         }
     }
 }

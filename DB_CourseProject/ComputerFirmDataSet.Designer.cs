@@ -1220,10 +1220,10 @@ namespace DB_CourseProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GoodsRow AddGoodsRow(int goodsId, DevicesRow parentDevicesRowByFK_Goods_Devices, TypesRow parentTypesRowByFK_Goods_Types, string name, decimal price) {
+            public GoodsRow AddGoodsRow(DevicesRow parentDevicesRowByFK_Goods_Devices, TypesRow parentTypesRowByFK_Goods_Types, string name, decimal price) {
                 GoodsRow rowGoodsRow = ((GoodsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        goodsId,
+                        null,
                         null,
                         null,
                         name,
@@ -1285,6 +1285,9 @@ namespace DB_CourseProject {
                 base.Columns.Add(this.columnprice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columngoodsId}, true));
+                this.columngoodsId.AutoIncrement = true;
+                this.columngoodsId.AutoIncrementSeed = -1;
+                this.columngoodsId.AutoIncrementStep = -1;
                 this.columngoodsId.AllowDBNull = false;
                 this.columngoodsId.Unique = true;
                 this.columntDeviceId.AllowDBNull = false;
@@ -1544,10 +1547,10 @@ namespace DB_CourseProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SalesRow AddSalesRow(int saleId, Employees1Row parentEmployees1RowByFK_Sales_Employees1, BasketRow parentBasketRowByFK_Sales_Basket, System.DateTime date, decimal totalPrice) {
+            public SalesRow AddSalesRow(Employees1Row parentEmployees1RowByFK_Sales_Employees1, BasketRow parentBasketRowByFK_Sales_Basket, System.DateTime date, decimal totalPrice) {
                 SalesRow rowSalesRow = ((SalesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        saleId,
+                        null,
                         null,
                         null,
                         date,
@@ -1609,6 +1612,9 @@ namespace DB_CourseProject {
                 base.Columns.Add(this.columntotalPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnsaleId}, true));
+                this.columnsaleId.AutoIncrement = true;
+                this.columnsaleId.AutoIncrementSeed = -1;
+                this.columnsaleId.AutoIncrementStep = -1;
                 this.columnsaleId.AllowDBNull = false;
                 this.columnsaleId.Unique = true;
                 this.columnempId.AllowDBNull = false;

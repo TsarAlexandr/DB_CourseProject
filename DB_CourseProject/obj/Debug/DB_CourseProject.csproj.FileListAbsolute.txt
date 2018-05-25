@@ -77,3 +77,7 @@ C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProj
 C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProject\obj\Debug\DB_CourseProject.Report.resources
 C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProject\obj\Debug\DB_CourseProject.SalesManagerStartForm.resources
 C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProject\obj\Debug\DB_CourseProject.CertForm.resources
+C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProject\obj\Debug\DB_CourseProject.AddDevice.resources
+C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProject\obj\Debug\DB_CourseProject.AddType.resources
+C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProject\obj\Debug\DB_CourseProject.DirectorStartForm.resources
+C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProject\obj\Debug\DB_CourseProject.NewItem.resources

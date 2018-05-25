@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace DB_CourseProject
 {
     public partial class AddItemForm : Form
     {
+       
         public AddItemForm()
         {
             InitializeComponent();
@@ -62,6 +64,21 @@ namespace DB_CourseProject
             var filter = "name LIKE '%" + textBox1.Text + "%'";
             goodsBindingSource.Filter = filter;
             goodsTableAdapter.Fill(computerFirmDataSet.Goods);
+        }
+
+        private void buttonAddItem_Click(object sender, EventArgs e)
+        {
+            DataRowView current = (DataRowView)this.goodsBindingSource.Current;
+            var par = this.Owner as Order;
+            var grid = par.getGrid();
+            var ID = current["goodsId"].ToString();
+            var Name = current["name"].ToString();
+            var Price = Decimal.Parse(current["price"].ToString());
+            var Count = Int32.Parse(numericQuantity.Value.ToString());
+            var Cost = Price * Count;
+            grid.Rows.Add(ID, Name, Price, Count, Cost);
+            par.getTotalCost();
+            this.Close();
         }
     }
 }
