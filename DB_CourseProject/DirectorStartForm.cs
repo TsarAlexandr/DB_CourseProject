@@ -23,5 +23,17 @@ namespace DB_CourseProject
             ni.ShowDialog();
         }
 
+        private void buttonGetReport_Click(object sender, EventArgs e)
+        {
+            GeneralReport gr = new GeneralReport();
+            gr.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ChartForm chart = new ChartForm();
+            chart.Owner = this;
+            chart.Show();
+        }
     }
 }

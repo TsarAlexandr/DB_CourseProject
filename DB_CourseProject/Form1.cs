@@ -35,6 +35,7 @@ namespace DB_CourseProject
             this.salesTableAdapter.Fill(this.computerFirmDataSet.Sales);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "computerFirmDataSet.Employees1". При необходимости она может быть перемещена или удалена.
             this.employees1TableAdapter.Fill(this.computerFirmDataSet.Employees1);
+            //employees1BindingSource.DataSource = computerFirmDataSet.Employees1.Where(x => x.empId != 0).ToList();
             while (true)
             {
                 var cur = (DataRowView)this.employees1BindingSource.Current;
@@ -104,6 +105,7 @@ namespace DB_CourseProject
             var dataset = emp.getDataSet();
             adapter.Update(dataset.Employees1);
             adapter.Fill(dataset.Employees1);
+            MessageBox.Show("Изменения сохранены!");
         }
 
         private void buttonAddPosition_Click(object sender, EventArgs e)

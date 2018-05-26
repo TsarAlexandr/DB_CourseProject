@@ -51,6 +51,7 @@
             this.buttonSales.TabIndex = 1;
             this.buttonSales.Text = "Журнал продаж";
             this.buttonSales.UseVisualStyleBackColor = true;
+            this.buttonSales.Click += new System.EventHandler(this.buttonSales_Click);
             // 
             // buttonPos
             // 

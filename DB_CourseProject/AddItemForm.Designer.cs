@@ -243,6 +243,7 @@
             this.goodsDataGridView.DataSource = this.goodsBindingSource;
             this.goodsDataGridView.Location = new System.Drawing.Point(12, 121);
             this.goodsDataGridView.Name = "goodsDataGridView";
+            this.goodsDataGridView.ReadOnly = true;
             this.goodsDataGridView.Size = new System.Drawing.Size(297, 96);
             this.goodsDataGridView.TabIndex = 1;
             // 
@@ -251,12 +252,14 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "name";
             this.dataGridViewTextBoxColumn4.HeaderText = "name";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "price";
             this.dataGridViewTextBoxColumn5.HeaderText = "price";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // comboBoxDevices
             // 

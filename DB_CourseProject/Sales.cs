@@ -29,6 +29,7 @@ namespace DB_CourseProject
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "computerFirmDataSet.Sales". При необходимости она может быть перемещена или удалена.
             this.salesTableAdapter.Fill(this.computerFirmDataSet.Sales);
+           
 
         }
 

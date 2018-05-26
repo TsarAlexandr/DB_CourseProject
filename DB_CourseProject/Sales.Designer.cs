@@ -224,6 +224,7 @@
             this.salesDataGridView.DataSource = this.salesBindingSource;
             this.salesDataGridView.Location = new System.Drawing.Point(12, 28);
             this.salesDataGridView.Name = "salesDataGridView";
+            this.salesDataGridView.ReadOnly = true;
             this.salesDataGridView.Size = new System.Drawing.Size(544, 220);
             this.salesDataGridView.TabIndex = 1;
             // 

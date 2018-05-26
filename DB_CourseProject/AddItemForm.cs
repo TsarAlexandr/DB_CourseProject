@@ -35,6 +35,8 @@ namespace DB_CourseProject
             this.devicesTableAdapter.Fill(this.computerFirmDataSet.Devices);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "computerFirmDataSet.Goods". При необходимости она может быть перемещена или удалена.
             this.goodsTableAdapter.Fill(this.computerFirmDataSet.Goods);
+            goodsBindingSource.DataSource = computerFirmDataSet.Goods.Where(x => x.goodsId != 5);
+            
 
         }
 
@@ -52,7 +54,7 @@ namespace DB_CourseProject
         private void comboBoxTypes_SelectedIndexChanged(object sender, EventArgs e)
         {
             string filter = "";
-            if (comboBoxDevices.SelectedItem != null)
+            if (comboBoxDevices.SelectedItem != null && comboBoxDevices.SelectedIndex != 0)
                 filter += "tDeviceId=" + comboBoxDevices.SelectedValue + " and ";
             filter += "typeId=" + comboBoxTypes.SelectedValue;
             goodsBindingSource.Filter = filter;

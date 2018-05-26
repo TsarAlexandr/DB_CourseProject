@@ -33,6 +33,8 @@ namespace DB_CourseProject
             this.salesTableAdapter.Fill(this.computerFirmDataSet.Sales);
             var mySales = computerFirmDataSet.Sales.Where(x => x.empId == empId);
             salesBindingSource.DataSource = mySales.ToList();
+           
+
 
         }
     }

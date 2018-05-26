@@ -35,34 +35,38 @@ namespace DB_CourseProject
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
             var id = Int32.Parse(textBox2.Text);
-            var user = computerFirmDataSet.Employees1.FindByempId(id);
-            if (user != null)
-            {
-                this.Visible = false;
-                int pos = Int32.Parse(user["posId"].ToString());
-                if (pos == 1)
+            
+                var user = computerFirmDataSet.Employees1.FindByempId(id);
+                if (user != null && id != 0)
                 {
-                    DirectorStartForm dsf = new DirectorStartForm();
-                    dsf.ShowDialog();
-                }
-                else if (pos == 2)
-                {
-                    StartForm sf = new StartForm();
-                    sf.ShowDialog();
+                    this.Visible = false;
+                    int pos = Int32.Parse(user["posId"].ToString());
+                    if (pos == 1)
+                    {
+                        DirectorStartForm dsf = new DirectorStartForm();
+                        dsf.ShowDialog();
+                    }
+                    else if (pos == 2)
+                    {
+                        StartForm sf = new StartForm();
+                        sf.ShowDialog();
+                    }
+                    else
+                    {
+                        SalesManagerStartForm sms = new SalesManagerStartForm(id);
+                        sms.ShowDialog();
+                    }
+
+                    textBox1.Clear();
+                    textBox2.Clear();
+                    this.Visible = true;
                 }
                 else
                 {
-                    SalesManagerStartForm sms = new SalesManagerStartForm(id);
-                    sms.ShowDialog();
+                    MessageBox.Show("Incorrect data");
                 }
+           
 
-                textBox1.Clear();
-                textBox2.Clear();
-                this.Visible = true;
-            }
-            else {
-                MessageBox.Show("Incorrect data");
-            }
         }
     }
 }

@@ -30,26 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.computerFirmDataSet = new DB_CourseProject.ComputerFirmDataSet();
             this.employees1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.computerFirmDataSet = new DB_CourseProject.ComputerFirmDataSet();
             this.employees1TableAdapter = new DB_CourseProject.ComputerFirmDataSetTableAdapters.Employees1TableAdapter();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SalesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SalesTableAdapter = new DB_CourseProject.ComputerFirmDataSetTableAdapters.SalesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.computerFirmDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employees1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.computerFirmDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalesBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // computerFirmDataSet
-            // 
-            this.computerFirmDataSet.DataSetName = "ComputerFirmDataSet";
-            this.computerFirmDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // employees1BindingSource
             // 
             this.employees1BindingSource.DataMember = "Employees1";
             this.employees1BindingSource.DataSource = this.computerFirmDataSet;
+            // 
+            // computerFirmDataSet
+            // 
+            this.computerFirmDataSet.DataSetName = "ComputerFirmDataSet";
+            this.computerFirmDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // employees1TableAdapter
             // 
@@ -85,8 +85,8 @@
             this.Name = "CertForm";
             this.Text = "CertForm";
             this.Load += new System.EventHandler(this.CertForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.computerFirmDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employees1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.computerFirmDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalesBindingSource)).EndInit();
             this.ResumeLayout(false);
 

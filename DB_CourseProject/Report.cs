@@ -19,16 +19,19 @@ namespace DB_CourseProject
 
         private void Report_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "ComputerFirmDataSet.Sales". При необходимости она может быть перемещена или удалена.
-            this.SalesTableAdapter.Fill(this.ComputerFirmDataSet.Sales);
-            SalesBindingSource.DataSource = ComputerFirmDataSet.Sales.ToList();
-            this.reportViewer1.RefreshReport();
-            
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "ComputerFirmDataSet.ReportView". При необходимости она может быть перемещена или удалена.
+            this.ReportViewTableAdapter.Fill(this.ComputerFirmDataSet.ReportView);
+            ReportViewBindingSource.DataSource = ComputerFirmDataSet.ReportView.ToList();
+            reportViewer1.RefreshReport();
+
         }
 
-        private void reportViewer1_Load(object sender, EventArgs e)
+        
+        private void buttonBuildReport_Click(object sender, EventArgs e)
         {
-            SalesBindingSource.DataSource = ComputerFirmDataSet.Sales.ToList();
+            
+            var source = ComputerFirmDataSet.ReportView.Where(x => (x.date >= dateTimePickerFrom.Value.Date && x.date <= dateTimePickerTO.Value));
+            ReportViewBindingSource.DataSource = source.ToList();
             this.reportViewer1.RefreshReport();
         }
     }

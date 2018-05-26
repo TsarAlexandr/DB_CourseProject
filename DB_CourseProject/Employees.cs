@@ -31,6 +31,8 @@ namespace DB_CourseProject
             this.positionsTableAdapter.Fill(this.computerFirmDataSet.Positions);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "computerFirmDataSet.Employees1". При необходимости она может быть перемещена или удалена.
             this.employees1TableAdapter.Fill(this.computerFirmDataSet.Employees1);
+            
+          
 
         }
 
@@ -62,6 +64,9 @@ namespace DB_CourseProject
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             this.employees1BindingSource.RemoveCurrent();
+            this.Validate();
+            this.employees1BindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.computerFirmDataSet);
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)

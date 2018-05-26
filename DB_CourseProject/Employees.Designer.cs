@@ -91,6 +91,7 @@
             this.employees1DataGridView.DataSource = this.employees1BindingSource;
             this.employees1DataGridView.Location = new System.Drawing.Point(12, 69);
             this.employees1DataGridView.Name = "employees1DataGridView";
+            this.employees1DataGridView.ReadOnly = true;
             this.employees1DataGridView.Size = new System.Drawing.Size(380, 249);
             this.employees1DataGridView.TabIndex = 1;
             // 
@@ -99,18 +100,21 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "surname";
             this.dataGridViewTextBoxColumn2.HeaderText = "surname";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "name";
             this.dataGridViewTextBoxColumn3.HeaderText = "name";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "patronymic";
             this.dataGridViewTextBoxColumn4.HeaderText = "patronymic";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // comboBox1
             // 

@@ -34,6 +34,9 @@ namespace DB_CourseProject
             // TODO: данная строка кода позволяет загрузить данные в таблицу "computerFirmDataSet.Goods". При необходимости она может быть перемещена или удалена.
             this.goodsTableAdapter.Fill(this.computerFirmDataSet.Goods);
 
+            //goodsBindingSource.DataSource = computerFirmDataSet.Goods.Where(x => x.goodsId != 5).ToList();
+
+            //goodsBindingSource.AllowNew = true;
         }
 
         public ComputerFirmDataSetTableAdapters.DevicesTableAdapter getDevAdapter()

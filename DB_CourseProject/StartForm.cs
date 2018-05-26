@@ -29,5 +29,11 @@ namespace DB_CourseProject
             apf.Owner = this;
             apf.ShowDialog();
         }
+
+        private void buttonSales_Click(object sender, EventArgs e)
+        {
+            Sales s = new Sales();
+            s.ShowDialog();
+        }
     }
 }
