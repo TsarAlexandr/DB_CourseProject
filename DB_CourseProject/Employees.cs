@@ -12,6 +12,7 @@ namespace DB_CourseProject
 {
     public partial class Employees : Form
     {
+       
         public Employees()
         {
             InitializeComponent();
@@ -30,7 +31,9 @@ namespace DB_CourseProject
             // TODO: данная строка кода позволяет загрузить данные в таблицу "computerFirmDataSet.Positions". При необходимости она может быть перемещена или удалена.
             this.positionsTableAdapter.Fill(this.computerFirmDataSet.Positions);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "computerFirmDataSet.Employees1". При необходимости она может быть перемещена или удалена.
+            employees1BindingSource.Filter = "empId <> 0";
             this.employees1TableAdapter.Fill(this.computerFirmDataSet.Employees1);
+            comboBox1.SelectedItem = null;
             
           
 
@@ -78,8 +81,9 @@ namespace DB_CourseProject
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.employees1BindingSource.Filter = "posId=" + comboBox1.SelectedValue;
+            this.employees1BindingSource.Filter = "empId <> 0 AND posId=" + comboBox1.SelectedValue;
             this.employees1TableAdapter.Fill(this.computerFirmDataSet.Employees1);
+            
         }
 
         private void buttonCertificate_Click(object sender, EventArgs e)
@@ -87,6 +91,13 @@ namespace DB_CourseProject
             CertForm cert = new CertForm();
             cert.Owner = this;
             cert.ShowDialog();
+        }
+
+        private void buttonAll_Click(object sender, EventArgs e)
+        {
+            this.employees1BindingSource.Filter = "empId <> 0";
+            this.employees1TableAdapter.Fill(this.computerFirmDataSet.Employees1);
+            
         }
     }
 }

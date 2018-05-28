@@ -34,9 +34,9 @@ namespace DB_CourseProject
             // TODO: данная строка кода позволяет загрузить данные в таблицу "computerFirmDataSet.Goods". При необходимости она может быть перемещена или удалена.
             this.goodsTableAdapter.Fill(this.computerFirmDataSet.Goods);
 
-            //goodsBindingSource.DataSource = computerFirmDataSet.Goods.Where(x => x.goodsId != 5).ToList();
+            goodsBindingSource.Filter = "goodsId <> 5";
 
-            //goodsBindingSource.AllowNew = true;
+            
         }
 
         public ComputerFirmDataSetTableAdapters.DevicesTableAdapter getDevAdapter()
@@ -87,9 +87,17 @@ namespace DB_CourseProject
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.goodsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.computerFirmDataSet);
+            try
+            {
+                this.Validate();
+                this.goodsBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.computerFirmDataSet);
+                MessageBox.Show("Товар добавлен");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Неверные данные");
+            }
         }
 
         private void buttonAddDevice_Click(object sender, EventArgs e)

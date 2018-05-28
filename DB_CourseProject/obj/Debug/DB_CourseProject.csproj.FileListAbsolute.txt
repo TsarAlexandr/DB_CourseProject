@@ -83,3 +83,5 @@ C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProj
 C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProject\obj\Debug\DB_CourseProject.Login.resources
 C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProject\obj\Debug\DB_CourseProject.GeneralReport.resources
 C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProject\obj\Debug\DB_CourseProject.ChartForm.resources
+C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProject\obj\Debug\DB_CourseProject.csprojResolveAssemblyReference.cache
+C:\Users\Царь Александр\source\repos\DB_CourseProject\DB_CourseProject\obj\Debug\DB_CourseProject.DiagramForm.resources

@@ -37,6 +37,7 @@
             this.ReportViewTableAdapter = new DB_CourseProject.ComputerFirmDataSetTableAdapters.ReportViewTableAdapter();
             this.SalesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SalesTableAdapter = new DB_CourseProject.ComputerFirmDataSetTableAdapters.SalesTableAdapter();
+            this.generalReportViewTableAdapter1 = new DB_CourseProject.ComputerFirmDataSetTableAdapters.GeneralReportViewTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ComputerFirmDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Employees1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReportViewBindingSource)).BeginInit();
@@ -85,6 +86,10 @@
             // 
             this.SalesTableAdapter.ClearBeforeFill = true;
             // 
+            // generalReportViewTableAdapter1
+            // 
+            this.generalReportViewTableAdapter1.ClearBeforeFill = true;
+            // 
             // ChartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,5 +117,6 @@
         private ComputerFirmDataSetTableAdapters.ReportViewTableAdapter ReportViewTableAdapter;
         private System.Windows.Forms.BindingSource SalesBindingSource;
         private ComputerFirmDataSetTableAdapters.SalesTableAdapter SalesTableAdapter;
+        private ComputerFirmDataSetTableAdapters.GeneralReportViewTableAdapter generalReportViewTableAdapter1;
     }
 }

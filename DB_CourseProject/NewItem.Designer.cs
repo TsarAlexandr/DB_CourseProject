@@ -37,14 +37,14 @@
             this.goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.goodsTableAdapter = new DB_CourseProject.ComputerFirmDataSetTableAdapters.GoodsTableAdapter();
             this.tableAdapterManager = new DB_CourseProject.ComputerFirmDataSetTableAdapters.TableAdapterManager();
+            this.devicesTableAdapter = new DB_CourseProject.ComputerFirmDataSetTableAdapters.DevicesTableAdapter();
+            this.typesTableAdapter = new DB_CourseProject.ComputerFirmDataSetTableAdapters.TypesTableAdapter();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.buttonAddType = new System.Windows.Forms.Button();
             this.buttonAddDevice = new System.Windows.Forms.Button();
             this.devicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.devicesTableAdapter = new DB_CourseProject.ComputerFirmDataSetTableAdapters.DevicesTableAdapter();
             this.typesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.typesTableAdapter = new DB_CourseProject.ComputerFirmDataSetTableAdapters.TypesTableAdapter();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonPrevios = new System.Windows.Forms.Button();
             this.buttonLast = new System.Windows.Forms.Button();
@@ -63,6 +63,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.devicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typesBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tDeviceIdLabel
+            // 
+            tDeviceIdLabel.AutoSize = true;
+            tDeviceIdLabel.Location = new System.Drawing.Point(15, 27);
+            tDeviceIdLabel.Name = "tDeviceIdLabel";
+            tDeviceIdLabel.Size = new System.Drawing.Size(111, 13);
+            tDeviceIdLabel.TabIndex = 3;
+            tDeviceIdLabel.Text = "Целевое устройство";
+            // 
+            // typeIdLabel
+            // 
+            typeIdLabel.AutoSize = true;
+            typeIdLabel.Location = new System.Drawing.Point(272, 27);
+            typeIdLabel.Name = "typeIdLabel";
+            typeIdLabel.Size = new System.Drawing.Size(26, 13);
+            typeIdLabel.TabIndex = 5;
+            typeIdLabel.Text = "Тип";
+            // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new System.Drawing.Point(75, 99);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new System.Drawing.Size(83, 13);
+            nameLabel.TabIndex = 7;
+            nameLabel.Text = "Наименование";
+            // 
+            // priceLabel
+            // 
+            priceLabel.AutoSize = true;
+            priceLabel.Location = new System.Drawing.Point(75, 122);
+            priceLabel.Name = "priceLabel";
+            priceLabel.Size = new System.Drawing.Size(67, 13);
+            priceLabel.TabIndex = 9;
+            priceLabel.Text = "Цена за шт.";
             // 
             // computerFirmDataSet
             // 
@@ -90,32 +126,13 @@
             this.tableAdapterManager.TypesTableAdapter = this.typesTableAdapter;
             this.tableAdapterManager.UpdateOrder = DB_CourseProject.ComputerFirmDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // tDeviceIdLabel
+            // devicesTableAdapter
             // 
-            tDeviceIdLabel.AutoSize = true;
-            tDeviceIdLabel.Location = new System.Drawing.Point(36, 28);
-            tDeviceIdLabel.Name = "tDeviceIdLabel";
-            tDeviceIdLabel.Size = new System.Drawing.Size(62, 13);
-            tDeviceIdLabel.TabIndex = 3;
-            tDeviceIdLabel.Text = "t Device Id:";
+            this.devicesTableAdapter.ClearBeforeFill = true;
             // 
-            // typeIdLabel
+            // typesTableAdapter
             // 
-            typeIdLabel.AutoSize = true;
-            typeIdLabel.Location = new System.Drawing.Point(272, 27);
-            typeIdLabel.Name = "typeIdLabel";
-            typeIdLabel.Size = new System.Drawing.Size(42, 13);
-            typeIdLabel.TabIndex = 5;
-            typeIdLabel.Text = "type Id:";
-            // 
-            // nameLabel
-            // 
-            nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(96, 99);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(36, 13);
-            nameLabel.TabIndex = 7;
-            nameLabel.Text = "name:";
+            this.typesTableAdapter.ClearBeforeFill = true;
             // 
             // nameTextBox
             // 
@@ -124,15 +141,6 @@
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(121, 20);
             this.nameTextBox.TabIndex = 8;
-            // 
-            // priceLabel
-            // 
-            priceLabel.AutoSize = true;
-            priceLabel.Location = new System.Drawing.Point(96, 125);
-            priceLabel.Name = "priceLabel";
-            priceLabel.Size = new System.Drawing.Size(33, 13);
-            priceLabel.TabIndex = 9;
-            priceLabel.Text = "price:";
             // 
             // priceTextBox
             // 
@@ -167,18 +175,10 @@
             this.devicesBindingSource.DataMember = "Devices";
             this.devicesBindingSource.DataSource = this.computerFirmDataSet;
             // 
-            // devicesTableAdapter
-            // 
-            this.devicesTableAdapter.ClearBeforeFill = true;
-            // 
             // typesBindingSource
             // 
             this.typesBindingSource.DataMember = "Types";
             this.typesBindingSource.DataSource = this.computerFirmDataSet;
-            // 
-            // typesTableAdapter
-            // 
-            this.typesTableAdapter.ClearBeforeFill = true;
             // 
             // buttonNext
             // 

@@ -35,7 +35,7 @@ namespace DB_CourseProject
             this.salesTableAdapter.Fill(this.computerFirmDataSet.Sales);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "computerFirmDataSet.Employees1". При необходимости она может быть перемещена или удалена.
             this.employees1TableAdapter.Fill(this.computerFirmDataSet.Employees1);
-            //employees1BindingSource.DataSource = computerFirmDataSet.Employees1.Where(x => x.empId != 0).ToList();
+            employees1BindingSource.Filter = "empId <> 0";
             while (true)
             {
                 var cur = (DataRowView)this.employees1BindingSource.Current;
@@ -97,15 +97,22 @@ namespace DB_CourseProject
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.employees1BindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.computerFirmDataSet);
-            var emp = this.Owner as Employees;
-            var adapter = emp.getAdapter();
-            var dataset = emp.getDataSet();
-            adapter.Update(dataset.Employees1);
-            adapter.Fill(dataset.Employees1);
-            MessageBox.Show("Изменения сохранены!");
+            try
+            {
+                this.Validate();
+                this.employees1BindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.computerFirmDataSet);
+                var emp = this.Owner as Employees;
+                var adapter = emp.getAdapter();
+                var dataset = emp.getDataSet();
+                adapter.Update(dataset.Employees1);
+                adapter.Fill(dataset.Employees1);
+                MessageBox.Show("Изменения сохранены!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Введены некорректные данные!");
+            }
         }
 
         private void buttonAddPosition_Click(object sender, EventArgs e)

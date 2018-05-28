@@ -35,7 +35,7 @@ namespace DB_CourseProject
             this.devicesTableAdapter.Fill(this.computerFirmDataSet.Devices);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "computerFirmDataSet.Goods". При необходимости она может быть перемещена или удалена.
             this.goodsTableAdapter.Fill(this.computerFirmDataSet.Goods);
-            goodsBindingSource.DataSource = computerFirmDataSet.Goods.Where(x => x.goodsId != 5);
+            goodsBindingSource.Filter = "goodsId <> 5";
             
 
         }
@@ -56,9 +56,11 @@ namespace DB_CourseProject
             string filter = "";
             if (comboBoxDevices.SelectedItem != null && comboBoxDevices.SelectedIndex != 0)
                 filter += "tDeviceId=" + comboBoxDevices.SelectedValue + " and ";
-            filter += "typeId=" + comboBoxTypes.SelectedValue;
+            filter += "goodsId <> 5 AND  typeId=" + comboBoxTypes.SelectedValue;
             goodsBindingSource.Filter = filter;
             goodsTableAdapter.Fill(computerFirmDataSet.Goods);
+            
+
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -70,17 +72,27 @@ namespace DB_CourseProject
 
         private void buttonAddItem_Click(object sender, EventArgs e)
         {
-            DataRowView current = (DataRowView)this.goodsBindingSource.Current;
-            var par = this.Owner as Order;
-            var grid = par.getGrid();
-            var ID = current["goodsId"].ToString();
-            var Name = current["name"].ToString();
-            var Price = Decimal.Parse(current["price"].ToString());
-            var Count = Int32.Parse(numericQuantity.Value.ToString());
-            var Cost = Price * Count;
-            grid.Rows.Add(ID, Name, Price, Count, Cost);
-            par.getTotalCost();
-            this.Close();
+            try
+            {
+                DataRowView current = (DataRowView)this.goodsBindingSource.Current;
+                var par = this.Owner as Order;
+                var grid = par.getGrid();
+                var ID = current["goodsId"].ToString();
+                var Name = current["name"].ToString();
+                var Price = Decimal.Parse(current["price"].ToString());
+                var Count = Int32.Parse(numericQuantity.Value.ToString());
+                var Cost = Price * Count;
+                grid.Rows.Add(ID, Name, Price, Count, Cost);
+                par.getTotalCost();
+                this.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Выберите хотя бы 1 элемент");
+            }
         }
+
+        
     }
 }

@@ -35,9 +35,10 @@ namespace DB_CourseProject
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
             var id = Int32.Parse(textBox2.Text);
+            string name = textBox1.Text;
             
                 var user = computerFirmDataSet.Employees1.FindByempId(id);
-                if (user != null && id != 0)
+                if ((user != null && id != 0) && (user["surname"].ToString() == name))
                 {
                     this.Visible = false;
                     int pos = Int32.Parse(user["posId"].ToString());

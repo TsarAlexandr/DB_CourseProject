@@ -29,7 +29,16 @@ namespace DB_CourseProject
             gr.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+      
+
+        private void buttonDiagram_Click(object sender, EventArgs e)
+        {
+            DiagramForm diagram = new DiagramForm();
+            diagram.Owner = this;
+            diagram.Show();
+        }
+
+        private void buttonChart_Click(object sender, EventArgs e)
         {
             ChartForm chart = new ChartForm();
             chart.Owner = this;

@@ -31,16 +31,24 @@ namespace DB_CourseProject
 
             var EmployeeTable = dataset.Employees1;
             DataRow row = EmployeeTable.NewRow();
-            row["surname"] = textBox1.Text;
-            row["name"] = textBox2.Text;
-            row["patronymic"] = textBox3.Text;
-            row["salary"] = Decimal.Parse(textBox4.Text);
-            row["posId"] = Int32.Parse(comboBox1.SelectedValue.ToString());
-            EmployeeTable.Rows.Add(row);
-            adapter.Update(EmployeeTable);
-            adapter.Fill(EmployeeTable);
-            this.Close();
+            try
+            {
+                row["surname"] = textBox1.Text;
+                row["name"] = textBox2.Text;
+                row["patronymic"] = textBox3.Text;
+                row["salary"] = Decimal.Parse(textBox4.Text);
+                row["posId"] = Int32.Parse(comboBox1.SelectedValue.ToString());
             
+                EmployeeTable.Rows.Add(row);
+                adapter.Update(EmployeeTable);
+
+                adapter.Fill(EmployeeTable);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ввыедены некорректные данные!!");
+            }
         }
         public ComputerFirmDataSetTableAdapters.PositionsTableAdapter getPosAdapter()
         {

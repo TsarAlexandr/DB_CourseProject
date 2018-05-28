@@ -73,17 +73,24 @@ namespace DB_CourseProject
 
         private void buttonGetOrder_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < dataGridView1.RowCount - 1; ++i)
+            if (Int32.Parse(labelTotal.Text) != 0)
             {
-                var ID = dataGridView1.Rows[i].Cells["ItemId"].Value.ToString();
-                var Quan = dataGridView1.Rows[i].Cells["Quantity"].Value.ToString();
-                var Price = dataGridView1.Rows[i].Cells["Price"].Value.ToString();
-                var orderId = addBasket(ID, Quan);
-                if (orderId != -10)
-                    addOrder(orderId, Price);
+                for (int i = 0; i < dataGridView1.RowCount - 1; ++i)
+                {
+                    var ID = dataGridView1.Rows[i].Cells["ItemId"].Value.ToString();
+                    var Quan = dataGridView1.Rows[i].Cells["Quantity"].Value.ToString();
+                    var Price = dataGridView1.Rows[i].Cells["Price"].Value.ToString();
+                    var orderId = addBasket(ID, Quan);
+                    if (orderId != -10)
+                        addOrder(orderId, Price);
+                }
+
+                MessageBox.Show("Заказ оформлен");
+                this.Close();
             }
-            MessageBox.Show("Order Passed!");
-            this.Close();
+            else {
+                MessageBox.Show("Добавьте хотя бы 1 товар!");
+            }
             
 
         }
